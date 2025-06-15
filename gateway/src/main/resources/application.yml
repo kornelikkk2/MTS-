@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: passport-service
+          uri: lb://PASSPORT-SERVICE
+          predicates:
+            - Path=/passport/**
+          filters:
+            - AuthenticationFilter
+
+        - id: booking-service
+          uri: lb://BOOKING-SERVICE
+          predicates:
+            - Path=/booking/**
+          filters:
+            - AuthenticationFilter
+
+        - id: authenticate-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**
+  application:
+    name: APP-GATEWAY
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
