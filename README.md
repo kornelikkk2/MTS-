@@ -3,3 +3,5 @@ Microservice architecture, REST, Redis caching, authorization and authentication
 
 ## Application architecture
 ![Application architecture](diagrams/diagram1.png)
+
+If you have any questions, write to telegram: @kornelikkk
